@@ -88,22 +88,27 @@ let finances = [
 ];
 
 //test
-
 let total = 0;
 let changes = 0;
-let net = 0;
+let net = finances[0][1];
 let netArray = [];
 
 
 for (let i = 0; i < finances.length; i++) {
-    //console.log(finances[i][1]); 
+    
     total = total+finances[i][1];
+ 
     changes = finances[i][1] - net;
-    net = finances[i][[1]];
+    net = finances[i][1];
+    netArray.push(changes);
 }
+
+
+
+
 let numberMonths = finances.length;
-let averageChange = changes / finances.length;
-console.log(averageChange)
+console.log(netArray);
+
 
 
 // Declare
@@ -112,7 +117,7 @@ let financialAnalysis = `Financial Analysis
 ----------------------------
 Total Months: ${numberMonths}
 Total: $${total}
-Average Change: $${averageChange}`; 
+Average Change: $`; 
                         
 // test
 
@@ -120,5 +125,12 @@ Average Change: $${averageChange}`;
 //console.log(net)
 
 console.log(financialAnalysis);
+
+/*
+sum difference	196785
+Average change	2288.1976744186
+2196167	Highest ['Feb-2012'
+-1926159 Lowest ['Sep-2013'
+*/
 
 
