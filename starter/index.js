@@ -94,23 +94,31 @@ let net = finances[0][1];
 let netArray = [];
 let totalNet = 0;
 
-
+    //get length of finances array
 for (let i = 0; i < finances.length; i++) {
-    
+
+    //sum total revenue and losses
     total = total+finances[i][1];
- 
+    
+    //subtract array to next element
     changes = finances[i][1] - net;
     net = finances[i][1];
     netArray.push(changes);
 }
 
+//sum netArray
 for (let i = 0; i < netArray.length; i++) {
     totalNet += netArray[i];
 }
 
-
+//assign the length of finances
 let numberMonths = finances.length;
-console.log(totalNet);
+
+// average the total net changes
+let averageNet = totalNet / numberMonths
+
+let averageChange = averageNet.toFixed(2);
+console.log(averageChange);
 
 
 
