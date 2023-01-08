@@ -121,16 +121,39 @@ let averageNet = totalNet / numberMonths
 let averageChange = averageNet.toFixed(2);
 //console.log(netArray);
 
+//Get highest and lowest number on the array
 let highest = Math.max(...netArray);
-console.log(highest)
-/* to count array until reaches number
-let myArray = [[1, 2], [3, 4], [5, 6], [3, 4], [7, 8]];
 
-let specificArray = [3, 4];
+let lowest = Math.min(...netArray);
 
-let length = myArray.findIndex(element => element === specificArray);
+/* to count array until reaches number */
 
-console.log(length);*/
+let increaseNumber = netArray.findIndex(element => element === highest);
+
+// to count month until it reaches increaseNumber variable = highest
+
+let count = 0;
+let month;
+let monthh;
+
+for (let i = 0; i < finances.length; i++) {
+count++;
+if (count == increaseNumber) {
+month = finances.slice(0, count);
+console.log(month);
+
+break;
+}
+}
+//return last array
+monthh = month.slice(-1);
+
+//get last month
+let highestMonth = monthh[0][0];
+
+
+console.log(increaseNumber);
+console.log(netArray);
 
 // Declare
 
@@ -139,8 +162,8 @@ let financialAnalysis = `Financial Analysis
 Total Months: ${numberMonths}
 Total: $${total}
 Average Change: $${averageChange}
-Greatest Increase in Profits: 
-Greatest Decrease in Profits: `; 
+Greatest Increase in Profits: ${highestMonth} ($${highest})
+Greatest Decrease in Profits: ($${lowest})`; 
                         
 // test
 
