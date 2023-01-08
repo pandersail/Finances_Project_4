@@ -92,6 +92,7 @@ let total = 0;
 let changes = 0;
 let net = finances[0][1];
 let netArray = [];
+let totalNet = 0;
 
 
 for (let i = 0; i < finances.length; i++) {
@@ -103,11 +104,13 @@ for (let i = 0; i < finances.length; i++) {
     netArray.push(changes);
 }
 
-
+for (let i = 0; i < netArray.length; i++) {
+    totalNet += netArray[i];
+}
 
 
 let numberMonths = finances.length;
-console.log(netArray);
+console.log(totalNet);
 
 
 
