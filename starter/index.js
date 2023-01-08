@@ -108,7 +108,7 @@ for (let i = 0; i < finances.length; i++) {
 
 //sum netArray
 for (let i = 0; i < netArray.length; i++) {
-    totalNet += netArray[i];
+    totalNet -= netArray[i];
 }
 
 //assign the length of finances
@@ -117,10 +117,20 @@ let numberMonths = finances.length;
 // average the total net changes
 let averageNet = totalNet / numberMonths
 
+// bring numbers to two decimals
 let averageChange = averageNet.toFixed(2);
-console.log(averageChange);
+//console.log(netArray);
 
+let highest = Math.max(...netArray);
+console.log(highest)
+/* to count array until reaches number
+let myArray = [[1, 2], [3, 4], [5, 6], [3, 4], [7, 8]];
 
+let specificArray = [3, 4];
+
+let length = myArray.findIndex(element => element === specificArray);
+
+console.log(length);*/
 
 // Declare
 
@@ -128,7 +138,9 @@ let financialAnalysis = `Financial Analysis
 ----------------------------
 Total Months: ${numberMonths}
 Total: $${total}
-Average Change: $`; 
+Average Change: $${averageChange}
+Greatest Increase in Profits: 
+Greatest Decrease in Profits: `; 
                         
 // test
 
