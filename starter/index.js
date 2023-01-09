@@ -108,7 +108,7 @@ for (let i = 0; i < finances.length; i++) {
 
 //sum netArray
 for (let i = 0; i < netArray.length; i++) {
-    totalNet -= netArray[i];
+    totalNet += netArray[i];
 }
 
 //assign the length of finances
@@ -138,10 +138,9 @@ let monthh;
 
 for (let i = 0; i < finances.length; i++) {
 count++;
-if (count == increaseNumber) {
+if (count == increaseNumber +1 ) {
 month = finances.slice(0, count);
 console.log(month);
-
 break;
 }
 }
@@ -165,11 +164,6 @@ Average Change: $${averageChange}
 Greatest Increase in Profits: ${highestMonth} ($${highest})
 Greatest Decrease in Profits: ($${lowest})`; 
                         
-// test
-
-//console.log(changes);
-//console.log(net)
-
 console.log(financialAnalysis);
 
 /*
