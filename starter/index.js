@@ -126,9 +126,10 @@ let highest = Math.max(...netArray);
 
 let lowest = Math.min(...netArray);
 
-/* to count array until reaches number */
+/* to count array until reaches number highest/lowest*/
 
 let increaseNumber = netArray.findIndex(element => element === highest);
+let decreaseNumber = netArray.findIndex(element => element === lowest);
 
 // to count month until it reaches increaseNumber variable = highest
 
@@ -152,7 +153,7 @@ let highestMonth = monthh[0][0];
 
 
 console.log(increaseNumber);
-console.log(netArray);
+//console.log(netArray);
 
 // Declare
 
@@ -164,7 +165,7 @@ Average Change: $${averageChange}
 Greatest Increase in Profits: ${highestMonth} ($${highest})
 Greatest Decrease in Profits: ($${lowest})`; 
                         
-console.log(financialAnalysis);
+//console.log(financialAnalysis);
 
 /*
 sum difference	196785
