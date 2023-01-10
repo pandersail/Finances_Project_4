@@ -100,10 +100,10 @@ for (let i = 0; i < finances.length; i++) {
     //sum total revenue and losses
     total = total+finances[i][1];
     
-    //subtract array to next element
+    //subtract array to subsequent integer-array element
     changes = finances[i][1] - net;
     net = finances[i][1];
-    netArray.push(changes);
+    netArray.push(changes); 
 }
 
 //sum netArray
