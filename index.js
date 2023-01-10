@@ -122,56 +122,59 @@ let averageChange = averageNet.toFixed(2);
 //console.log(netArray);
 
 //Get highest and lowest number on the array
-let highest = Math.max(...netArray);
+let highestNumber = Math.max(...netArray);
 
-let lowest = Math.min(...netArray);
+let lowestNumber = Math.min(...netArray);
 
 /* to count array until reaches number highest/lowest*/
 
-let increaseNumber = netArray.findIndex(element => element === highest);
-let decreaseNumber = netArray.findIndex(element => element === lowest);
+let increaseNumber = netArray.findIndex(element => element === highestNumber);
+let decreaseNumber = netArray.findIndex(element => element === lowestNumber);
 
-// to count month until it reaches increaseNumber variable = highest
+// to count month until it reaches increaseNumber variable = highest / lowest
 
 let count = 0;
-let month;
-let monthh;
+let monthNumberHigh;
+let monthNumberLow;
+let findMonthHigh;
+let findMonthLow;
 
 for (let i = 0; i < finances.length; i++) {
 count++;
 if (count == increaseNumber +1 ) {
-month = finances.slice(0, count);
-console.log(month);
+monthNumberHigh = finances.slice(0, count);
+//console.log(monthNumberHigh);
 break;
 }
 }
+
+for (let j = 0; j < finances.length; j++) {
+    count++;
+    if (count == decreaseNumber +1) {
+        monthNumberLow = finances.slice(0,count);
+        //console.log(monthNumberLow);
+        break;
+    }
+}
+
 //return last array
-monthh = month.slice(-1);
+findMonthHigh = monthNumberHigh.slice(-1);
+findMonthLow = monthNumberLow.slice(-1);
 
 //get last month
-let highestMonth = monthh[0][0];
+let highestMonth = findMonthHigh[0][0];
+let lowestMonth = findMonthLow[0][0];
 
-
-console.log(increaseNumber);
-//console.log(netArray);
-
-// Declare
 
 let financialAnalysis = `Financial Analysis
 ----------------------------
 Total Months: ${numberMonths}
 Total: $${total}
 Average Change: $${averageChange}
-Greatest Increase in Profits: ${highestMonth} ($${highest})
-Greatest Decrease in Profits: ($${lowest})`; 
+Greatest Increase in Profits: ${highestMonth} ($${highestNumber})
+Greatest Decrease in Profits: ${lowestMonth} ($${lowestNumber})`; 
                         
-//console.log(financialAnalysis);
-
-/*
-sum difference	196785
-Average change	2288.1976744186
-2196167	Highest ['Feb-2012'
--1926159 Lowest ['Sep-2013'
-*/
+console.log(financialAnalysis);
+alert(financialAnalysis);
 
 
